@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #09090b;
+  color: #bef264;
+  font-family: "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+code, pre, textarea.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Glassmorphism card utilities */
+.glass-card {
+  background: rgba(9,9,11, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(190,242,100, 0.5);
+  border-radius: 1rem;
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(190,242,100, 0.5);
+  box-shadow: 0 12px 30px -10px rgba(190,242,100, 0.25);
+}
+
+/* Auth inputs */
+.auth-input {
+  @apply w-full px-4 py-3 rounded-xl
+    bg-slate-900/60 border border-slate-700/70
+    text-white placeholder-slate-400
+    focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition;
+}
+
+/* Custom futuristic scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #18181b;
+  border-radius: 9999px;
+  border: 2px solid #09090b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bef264;
+}
+
+/* uniVerse visual system */
+:root { color-scheme: dark; --uv-black:#09090b; --uv-white:#fff; --uv-lime:#bef264; }
+html,body {background:var(--uv-black);color:var(--uv-white);}
+::selection {background:var(--uv-lime);color:var(--uv-black);}
+:focus-visible {outline:2px solid var(--uv-lime);outline-offset:3px;}
+input[type=range],input[type=checkbox],input[type=radio] {accent-color:var(--uv-lime);}
+/* Accent-filled controls need dark foregrounds for contrast. */
+:is(button,a)[class*="bg-gradient-to"], :is(button,a)[class*="bg-lime-500"], :is(button,a)[class*="bg-indigo-600"], :is(button,a)[class*="bg-cyan-600"], :is(button,a)[class*="bg-blue-600"], :is(button,a)[class*="bg-purple-600"], :is(button,a)[class*="bg-green-600"] {color:var(--uv-black);}
+.uv-landing {background:var(--uv-black);}
+.uv-hero {min-height: min(850px, 94vh);display:flex;align-items:center;padding:120px max(6vw,24px) 100px; border-bottom:1px solid #ffffff26;}
+.uv-hero-content {position:relative;z-index:2;width:100%;max-width:1200px;margin:auto;}
+.uv-kicker {font-size:11px;letter-spacing:.19em;font-weight:600;color:var(--uv-lime);margin-bottom:24px;}
+.uv-hero h1 {font-size:clamp(3.5rem,9vw,8.5rem);font-weight:600;line-height:.98;letter-spacing:-.075em;}
+.uv-hero h1 span {color:var(--uv-lime);}
+.uv-intro {font-size:clamp(1rem,2vw,1.25rem);line-height:1.65;max-width:540px;margin-top:30px;}
+.uv-actions {display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;}
+.uv-primary,.uv-secondary {display:inline-flex;align-items:center;gap:18px;padding:14px 22px;border-radius:7px;font-size:14px;font-weight:600;transition:transform .2s;}
+.uv-primary {background:var(--uv-lime);color:var(--uv-black);}
+.uv-secondary {border:1px solid #ffffff66;background:#09090b99;color:white;}
+.uv-primary:hover,.uv-secondary:hover {transform:translateY(-2px);}
+.uv-hero-bottom {position:absolute;bottom:24px;left:max(6vw,24px);right:max(6vw,24px);display:flex;justify-content:space-between;font-size:10px;letter-spacing:.12em;}
+.uv-section {max-width:1320px;margin:auto;padding:80px max(4vw,24px) 20px;}
+.uv-section h2 {font-size:clamp(2rem,4vw,3.6rem);font-weight:600;letter-spacing:-.045em;margin-bottom:30px;}
+.uv-feature-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#ffffff26;border:1px solid #ffffff26;border-radius:10px;overflow:hidden;}
+.uv-feature {position:relative;background:#09090b;min-height:175px;padding:26px;transition:background .2s;}
+.uv-feature:hover {background:#18181b;}
+.uv-feature h3 {font-size:19px;font-weight:600;margin:22px 0 8px;}
+.uv-feature p {font-size:14px;line-height:1.6;}
+.uv-feature-arrow {position:absolute;right:24px;top:26px;color:var(--uv-lime);}
+@media(max-width:760px){.uv-feature-grid{grid-template-columns:1fr;}.uv-hero{min-height:78vh;}.uv-hero-bottom{font-size:8px;}.uv-section{padding-top:55px;}}
